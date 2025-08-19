@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Sabonet, your destination for stylish and sustainable fashion. Shop men's, women's, and kids' apparel and accessories.">
+    <meta name="keywords" content="Sabonet, fashion, clothing, sustainable, apparel, e-commerce">
+    <meta name="author" content="Sabonet">
+    <title>Sabonet - Fashion Hub</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/sabonet.png" alt="Sabonet Logo" aria-label="Sabonet Home"></a>
+                </div>
+                <ul class="nav-links" role="navigation">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" aria-label="Shopping Cart">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Sabonet Fashion Hub</h1>
+                <p>Discover the latest trends in sustainable fashion. Look your best every day!</p>
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product-grid" id="featured-products"></div>
+            </div>
+        </section>
+
+        <section class="collections">
+            <div class="container">
+                <h2>Our Collections</h2>
+                <div class="collection-grid">
+                    <div class="collection-item">
+                        <img src="./images/men13.jpeg" alt="Men's Collection" loading="lazy">
+                        <h3>Men's Wear</h3>
+                        <a href="shop.html?category=men" class="btn btn-primary">Shop Men</a>
+                    </div>
+                    <div class="collection-item">
+                        <img src="./images/men15.jpg" alt="Women's Collection" loading="lazy">
+                        <h3>Women's Wear</h3>
+                        <a href="shop.html?category=women" class="btn btn-primary">Shop Women</a>
+                    </div>
+                    <div class="collection-item">
+                        <img src="./images/woman11.jpg" alt="Kids' Collection" loading="lazy">
+                        <h3>Kids' Wear</h3>
+                        <a href="shop.html?category=kids" class="btn btn-primary">Shop Kids</a>
+                    </div>
+                    <div class="collection-item">
+                        <img src="./images/kid5.jpg" alt="Accessories Collection" loading="lazy">
+                        <h3>Accessories</h3>
+                        <a href="shop.html?category=accessories" class="btn btn-primary">Shop Accessories</a>
+                    </div>
+
+                    <div class="collection-item">
+                        <img src="./images/iphone-16.webp" alt="Accessories Collection" loading="lazy">
+                        <h3>Accessories</h3>
+                        <a href="shop.html?category=accessories" class="btn btn-primary">Shop Accessories</a>
+                    </div>
+                    <div class="collection-item">
+                        <img src="./images/accessories3.jpg" alt="Accessories Collection" loading="lazy">
+                        <h3>Accessories</h3>
+                        <a href="shop.html?category=accessories" class="btn btn-primary">Shop Accessories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay updated with the latest trends and exclusive offers!</p>
+                <div role="form" aria-label="Newsletter Subscription">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                    <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sabonet. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/js.js"></script>
+    <script>
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('Subscribed successfully!');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Please enter a valid email.');
+            }
+        }
+        window.onload = () => {
+            renderFeatured(products.slice(0, 4)); // Dynamically render featured products from JSON data
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the latest fashion trends at Sabonet. Discover stylish apparel and accessories for men, women, and kids.">
+    <meta name="keywords" content="fashion, clothing, Sabonet, e-commerce, apparel">
+    <meta name="author" content="Sabonet">
+    <title>Sabonet - Shop</title>
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/sabonet.png" alt="Sabonet Logo" aria-label="Sabonet Home"></a>
+                </div>
+                <ul class="nav-links" role="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" aria-label="Shopping Cart">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Explore Our Collections</h1>
+                <p>Discover the latest in fashion with Sabonet's curated apparel and accessories.</p>
+                <a href="#shop-products" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="shop">
+            <div class="container">
+                <h2>Shop All Products</h2>
+                <div class="filters" role="toolbar">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                            <option value="kids">Kids</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="footwear">Footwear</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-sort">Sort By:</label>
+                        <select id="price-sort">
+                            <option value="low">Price: Low to High</option>
+                            <option value="high">Price: High to Low</option>
+                            <option value="new">New Arrivals</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search products...">
+                    </div>
+                </div>
+                <div class="product-grid" id="shop-products"></div>
+                <div class="pagination">
+                    <button onclick="changePage(-1)" aria-label="Previous Page">Previous</button>
+                    <span id="page-info">Page 1 of 1</span>
+                    <button onclick="changePage(1)" aria-label="Next Page">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sabonet. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/js.js"></script>
+    <script>
+        document.getElementById('category-filter').addEventListener('change', applyFilters);
+        document.getElementById('price-sort').addEventListener('change', applyFilters);
+        document.getElementById('search-input').addEventListener('input', applyFilters);
+        window.onload = applyFilters;
+    </script>
+</body>
+</html>
